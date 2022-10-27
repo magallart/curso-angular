@@ -6,15 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  titulo: string = 'Contador App';
-  numero: number = 0;
+  titulo = 'Contador App';
+  numero = 0;
+  base = 5;
 
-  // sumar(): number {
-  //   return this.numero++;
-  // }
-  // restar(): number {
-  //   return this.numero--;
-  // }
   operacion(valor: number): number {
     return (this.numero += valor);
   }

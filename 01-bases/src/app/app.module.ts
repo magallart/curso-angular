@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ContadorComponent } from './components/contador/contador.component';
 import { HeroeComponent } from './components/heroes/heroe/heroe.component';
+import { ListadoComponent } from './components/listado/listado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContadorComponent,
-    HeroeComponent
+    HeroeComponent,
+    ListadoComponent
   ],
   imports: [
     BrowserModule

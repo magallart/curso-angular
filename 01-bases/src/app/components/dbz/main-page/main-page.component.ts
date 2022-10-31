@@ -22,16 +22,4 @@ export class MainPageComponent {
     nombre: '',
     poder: 0,
   };
-
-  agregar(): void {
-    if (this.nuevo.nombre.trim().length == 0) {
-      return;
-    }
-
-    this.personajes.push(this.nuevo);
-    this.nuevo = {
-      nombre: '',
-      poder: 0,
-    };
-  }
 }

@@ -8,7 +8,7 @@ import { Gif, SearchGifsResponse } from '../interfaces/gifs.interface';
 export class GifsService {
   private apiKey = 'ctQGOwMUF2OnyZcdOulJjk8tZpTQakOl';
   private _historial: string[] = [];
-  public resultados: Gif[] = []; // TODO cambiar tipado
+  public resultados: Gif[] = [];
 
   get historial(): string[] {
     return [...this._historial];
@@ -16,6 +16,8 @@ export class GifsService {
 
   constructor(private http: HttpClient) {
     this._historial = JSON.parse(localStorage.getItem('historial')!) || [];
+    this.resultados =
+      JSON.parse(localStorage.getItem('resultados')!) || [];
   }
 
   buscarGifs(query: string = ''): Gif[] | void {
@@ -39,6 +41,10 @@ export class GifsService {
       .subscribe((resp) => {
         console.log(resp.data);
         this.resultados = resp.data;
+        localStorage.setItem(
+          'resultados',
+          JSON.stringify(this.resultados)
+        );
       });
   }
 }

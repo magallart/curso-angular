@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
 import { PaisService } from '../../services/pais.service';
 
 @Component({
@@ -8,15 +9,15 @@ import { PaisService } from '../../services/pais.service';
 })
 export class PorPaisComponent {
   termino = '';
-  hayError: boolean = false;
+  hayError = false;
 
   constructor(private paisService: PaisService) {}
 
-  buscar() {
+  buscar(): Observable<any> | void {
     this.hayError = false;
     this.paisService.buscarPais(this.termino).subscribe(
-      (resp) => {
-        console.log(resp);
+      (paises) => {
+        console.log(paises);
       },
       (err) => {
         this.hayError = true;

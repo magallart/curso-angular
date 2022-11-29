@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Country } from '../../interfaces/pais.interface';
 import { PaisService } from '../../services/pais.service';

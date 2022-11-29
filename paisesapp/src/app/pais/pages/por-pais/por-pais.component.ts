@@ -15,8 +15,10 @@ export class PorPaisComponent {
 
   constructor(private paisService: PaisService) {}
 
-  buscar(): Observable<any> | void {
+  buscar(termino: string): Observable<any> | void {
     this.hayError = false;
+    this.termino = termino;
+
     this.paisService.buscarPais(this.termino).subscribe(
       (paises) => {
         console.log(paises);

@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 
 // PrimeNg
 import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, ButtonModule],
+  imports: [BrowserModule, AppRoutingModule, ButtonModule, CardModule],
   providers: [],
   bootstrap: [AppComponent],
 })

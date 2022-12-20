@@ -2,5 +2,24 @@
   <h1>Hola mundo</h1>
   <button>Cambiar nombre</button>
 
-  <button pButton type="button" label="Cambiar nombre"></button>
+  <button
+    pButton
+    type="button"
+    label="Cambiar nombre"
+    icon="pi pi-bell"
+    iconPos="right"
+    class="p-button-help"
+  ></button>
 </div>
+
+<p-card
+  [header]="nombre | titlecase"
+  [style]="{ width: '25rem', 'margin-bottom': '2em' }"
+>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
+    consequuntur error repudiandae numquam deserunt quisquam repellat libero
+    asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate
+    neque quas!
+  </p>
+</p-card>

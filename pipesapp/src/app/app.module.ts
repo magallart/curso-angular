@@ -4,13 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-// PrimeNg
-import { ButtonModule } from 'primeng/button';
-import { CardModule } from 'primeng/card';
+// Módulo personalizado
+import { PrimeNgModule } from './prime-ng/prime-ng.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, ButtonModule, CardModule],
+  imports: [BrowserModule, AppRoutingModule, PrimeNgModule],
   providers: [],
   bootstrap: [AppComponent],
 })

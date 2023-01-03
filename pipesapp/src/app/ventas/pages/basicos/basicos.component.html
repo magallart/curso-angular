@@ -31,15 +31,15 @@
     <p-card>
       <ul>
         <li>fecha</li>
-        <hr>
+        <hr />
         <li>fecha | date</li>
-        <hr>
+        <hr />
         <li>fecha | date: short</li>
-        <hr>
+        <hr />
         <li>fecha | date: long</li>
-        <hr>
+        <hr />
         <li>fecha | date: dd/MM/yyyy</li>
-        <hr>
+        <hr />
         <li>fecha | date: MMMM dd, yyyyy</li>
       </ul>
     </p-card>
@@ -48,17 +48,50 @@
     <p-card
       ><ul>
         <li>{{ fecha }}</li>
-        <hr>
+        <hr />
         <li>{{ fecha | date }}</li>
+        <hr />
+        <li>{{ fecha | date : "short" }}</li>
+        <hr />
+        <li>{{ fecha | date : "long" }}</li>
+        <hr />
+        <li>{{ fecha | date : "dd/MM/yyyy" }}</li>
+        <hr />
+        <li>{{ fecha | date : "MMMM dd, yyyy" }}</li>
+      </ul>
+    </p-card>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="col-6">
+    <p-card>
+      <ul>
+        <li>fecha | date: long</li>
+        <hr />
+        <li>fecha | date:long:GMT+2</li>
+        <hr />
+        <li>fecha | date:long: :en</li>
+        <hr />
+        <li>fecha | date:long: :fr</li>
         <hr>
-        <li>{{ fecha | date:'short' }}</li>
-        <hr>
-        <li>{{ fecha | date:'long' }}</li>
-        <hr>
-        <li>{{ fecha | date:'dd/MM/yyyy' }}</li>
-        <hr>
-        <li>{{ fecha | date:'MMMM dd, yyyy' }}</li>
-      </ul></p-card
-    >
+        <li>fecha | date:long:GMT+5:de</li>
+      </ul>
+    </p-card>
+  </div>
+  <div class="col-6">
+    <p-card
+      ><ul>
+        <li>{{ fecha | date : "long" }}</li>
+        <hr />
+        <li>{{ fecha | date : "long" : "GMT+2" }}</li>
+        <hr />
+        <li>{{ fecha | date : "long" : "" : "en" }}</li>
+        <hr />
+        <li>{{ fecha | date : "long" : "" : "fr" }}</li>
+        <hr />
+        <li>{{ fecha | date : "long" : "GMT+5": 'de' }}</li>
+      </ul>
+    </p-card>
   </div>
 </div>

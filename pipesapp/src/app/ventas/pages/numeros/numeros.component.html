@@ -5,7 +5,7 @@
 
 <div class="grid">
   <div class="col-6">
-    <p-card header="Ventas netas" subheader="del año actual">
+    <p-card header="Number" subheader="Ventas Netas">
       <ul>
         <li><i class="pi pi-dollar"></i> {{ ventasNetas }}</li>
         <hr />
@@ -15,15 +15,20 @@
           <i class="pi pi-dollar"></i> {{ ventasNetas }} | number: '1.2-2'
         </li>
         <hr />
-        <li><i class="pi pi-dollar"></i> {{ ventasNetas }} | number: '1.6-6'</li>
+        <li>
+          <i class="pi pi-dollar"></i> {{ ventasNetas }} | number: '1.6-6'
+        </li>
         <hr />
-        <li><i class="pi pi-dollar"></i> {{ (ventasNetas + 1000000) }} | number: '1.6-6'</li>
+        <li>
+          <i class="pi pi-dollar"></i> {{ ventasNetas + 1000000 }} | number:
+          '1.6-6'
+        </li>
       </ul>
     </p-card>
   </div>
 
   <div class="col-6">
-    <p-card header="Ventas netas" subheader="del año actual">
+    <p-card header="Number" subheader="Ventas Netas">
       <ul>
         <li><i class="pi pi-dollar"></i>{{ ventasNetas }}</li>
         <hr />
@@ -33,10 +38,48 @@
           <i class="pi pi-dollar"></i>{{ ventasNetas | number : "1.2-2" }}
         </li>
         <hr />
-        <li><i class="pi pi-dollar"></i>{{ ventasNetas | number : "1.6-6" }}</li>
+        <li>
+          <i class="pi pi-dollar"></i>{{ ventasNetas | number : "1.6-6" }}
+        </li>
         <hr />
-        <li><i class="pi pi-dollar"></i>{{ (ventasNetas + 1000000) | number : "1.2-2" }}</li>
+        <li>
+          <i class="pi pi-dollar"></i
+          >{{ ventasNetas + 1000000 | number : "1.2-2" }}
+        </li>
       </ul>
     </p-card>
   </div>
 </div>
+
+<div class="grid">
+  <div class="col-6">
+    <p-card header="Currency" subheader="Ventas Brutas">
+      <ul>
+        <li>{{ ventasNetas + 5000000 }} | currency</li>
+        <hr />
+        <li>{{ ventasNetas + 5000000 }} | currency: 'USD':'symbol-narrow'</li>
+        <hr />
+        <li>{{ ventasNetas + 5000000 }} | currency: '€'</li>
+        <hr />
+        <li>{{ ventasNetas + 5000000 }} | currency: '€' : '' : '1.4-4'</li>
+      </ul>
+    </p-card>
+  </div>
+
+  <div class="col-6">
+    <p-card header="Currency" subheader="Ventas Brutas">
+      <ul>
+        <li>{{ ventasNetas + 5000000 | currency }}</li>
+        <hr />
+        <li>
+          {{ ventasNetas + 5000000 | currency : "USD" : "symbol-narrow" }}
+        </li>
+        <hr />
+        <li>{{ ventasNetas + 5000000 | currency : "€" }}</li>
+        <hr />
+        <li>{{ ventasNetas + 5000000 | currency : "€" : "" : "1.4-4" }}</li>
+      </ul>
+    </p-card>
+  </div>
+</div>
+

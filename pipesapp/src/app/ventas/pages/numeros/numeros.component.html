@@ -83,3 +83,28 @@
   </div>
 </div>
 
+<div class="grid">
+  <div class="col-6">
+    <p-card header="Porcentaje" subheader="Ganancias %">
+      <ul>
+        <li>{{ porcentaje }}</li>
+        <hr />
+        <li>{{ porcentaje }} | percent</li>
+        <hr />
+        <li>{{ porcentaje }} | percent : '2.2-2'</li>
+      </ul>
+    </p-card>
+  </div>
+
+  <div class="col-6">
+    <p-card header="Porcentaje" subheader="Ganancias %">
+      <ul>
+        <li>{{ porcentaje }}</li>
+        <hr />
+        <li>{{ porcentaje | percent }}</li>
+        <hr />
+        <li>{{ porcentaje | percent: '2.2-2' }}</li>
+      </ul>
+    </p-card>
+  </div>
+</div>

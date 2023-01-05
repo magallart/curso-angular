@@ -7,6 +7,8 @@ import { PrimeNGConfig } from 'primeng/api';
   styleUrls: ['./no-comunes.component.css'],
 })
 export class NoComunesComponent implements OnInit {
+  alternateName: boolean = true;
+
   // I18nSelect
   nombre: string = 'Miguel';
   genero: string = 'masculino';
@@ -17,16 +19,30 @@ export class NoComunesComponent implements OnInit {
   };
 
   // I18nPlural
-  clientes: string[] = ['Maria', 'Pedro', 'Juan'];
+  clientes: string[] = ['Maria', 'Pedro', 'Juan', 'Luisa', 'Eduardo'];
   clientesMapa = {
     '=0': 'no tenemos ningún cliente esperando',
     '=1': 'tenemos un cliente esperando',
-    'other': 'tenemos # clientes esperando',
+    other: 'tenemos # clientes esperando',
   };
 
   constructor(private primengConfig: PrimeNGConfig) {}
 
   ngOnInit(): void {
     this.primengConfig.ripple = true; // Efecto visual al apretar el botón toggle
+  }
+
+  cambiarPersona(): void {
+    if (this.alternateName) {
+      this.nombre = 'Marta';
+      this.genero = 'femenino';
+    } else {
+      this.nombre = 'Miguel';
+      this.genero = 'masculino';
+    }
+    this.alternateName = !this.alternateName;
+  }
+  borrarCliente(): void {
+    this.clientes.pop();
   }
 }

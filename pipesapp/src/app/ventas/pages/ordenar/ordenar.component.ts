@@ -8,9 +8,14 @@ import { Color, Heroe } from '../../interfaces/ventas.interface';
 })
 export class OrdenarComponent {
   letrasMayusculas: boolean = true;
+  ordenarPor: string = '';
 
   cambiarMayusculas(): void {
     this.letrasMayusculas = !this.letrasMayusculas;
+  }
+
+  cambiarOrden(valor: string) {
+    this.ordenarPor = valor;
   }
 
   heroes: Heroe[] = [

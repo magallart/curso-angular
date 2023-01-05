@@ -27,25 +27,23 @@
 </div>
 
 <p-toolbar>
-  <div class="p-toolbar-group-start">
-
-  </div>
+  <div class="p-toolbar-group-start"></div>
 
   <div class="p-toolbar-group-end">
     <button pButton pRipple type="button" label="Por nombre" icon="pi pi-sort"
-      class="ml-2 p-button-outlined p-button-help" (click)="cambiarMayusculas()"></button>
+      class="ml-2 p-button-outlined p-button-help" (click)="cambiarOrden('nombre')"></button>
 
-    <button pButton pRipple type="button" label="Valores" icon="pi pi-sort"
-      class="ml-2 p-button-outlined p-button-success" (click)="cambiarMayusculas()"></button>
+    <button pButton pRipple type="button" label="Vuela" icon="pi pi-sort"
+      class="ml-2 p-button-outlined p-button-success" (click)="cambiarOrden('vuela')"></button>
 
     <button pButton pRipple type="button" label="Por color" icon="pi pi-sort"
-      class="ml-2 p-button-outlined p-button-warning" (click)="cambiarMayusculas()"></button>
+      class="ml-2 p-button-outlined p-button-warning" (click)="cambiarOrden('color')"></button>
   </div>
 </p-toolbar>
 
 <div class="p-grid">
   <div class="p-col mt-3">
-    <p-table [value]="heroes | ordenar" [tableStyle]="{'min-width': '50rem'}">
+    <p-table [value]="heroes | ordenar: ordenarPor">
       <ng-template pTemplate="header">
         <tr>
           <th>Nombre</th>

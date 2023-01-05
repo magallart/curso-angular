@@ -42,7 +42,15 @@ export class NoComunesComponent implements OnInit {
     }
     this.alternateName = !this.alternateName;
   }
+
   borrarCliente(): void {
     this.clientes.pop();
   }
+
+  // KeyValue Pipe
+  persona = {
+    nombre: 'Miguel Ángel',
+    edad: 37,
+    direccion: 'Valencia, España',
+  };
 }

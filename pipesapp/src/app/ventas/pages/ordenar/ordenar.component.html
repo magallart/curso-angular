@@ -1,1 +1,27 @@
-<p>ordenar works!</p>
+<div class="text-layout">
+  <h1>Pipes personalizados</h1>
+  <p>Pipes creados por nosotros.</p>
+</div>
+
+<div class="grid">
+  <div class="col-4">
+    <p-card header="Number" subheader="Ventas Netas">
+      <p>
+        Probando el pipe {{'personalizado' | mayusculas: letrasMayusculas}} mayúsculas
+      </p>
+      <button pButton pRipple type="button" label="Toggle mayúsculas" icon="pi pi-check"
+        class="p-button-outlined p-button-help" (click)="cambiarMayusculas()"></button>
+    </p-card>
+  </div>
+
+  <div class="col-4">
+    <p-card header="Number" subheader="Ventas Netas">
+
+    </p-card>
+  </div>
+  <div class="col-4">
+    <p-card header="Number" subheader="Ventas Netas">
+
+    </p-card>
+  </div>
+</div>

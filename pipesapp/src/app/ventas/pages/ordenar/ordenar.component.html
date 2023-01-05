@@ -27,7 +27,43 @@
 </div>
 
 <p-toolbar>
-  <div class="p-toolbar-group-start"></div>
+  <div class="p-toolbar-group-start text-layout "><b>Pipe personalizado ORDENAR parametrizado</b></div>
+
+  <div class="p-toolbar-group-end">
+    <button pButton pRipple type="button" label="Por nombre" icon="pi pi-sort"
+      class="ml-2 p-button-outlined p-button-help" (click)="cambiarOrden('nombre')"></button>
+
+    <button pButton pRipple type="button" label="Vuela" icon="pi pi-sort"
+      class="ml-2 p-button-outlined p-button-success" (click)="cambiarOrden('vuela')"></button>
+
+    <button pButton pRipple type="button" label="Por color" icon="pi pi-sort"
+      class="ml-2 p-button-outlined p-button-warning" (click)="cambiarOrden('color')"></button>
+  </div>
+</p-toolbar>
+
+<div class="p-grid mb-5">
+  <div class="p-col mt-3">
+    <p-table [value]="heroes | ordenar: ordenarPor">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Nombre</th>
+          <th>Vuela</th>
+          <th>Color</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-heroe>
+        <tr>
+          <td>{{heroe.nombre}}</td>
+          <td>{{heroe.vuela | vuela}}</td>
+          <td>{{heroe.color}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+
+<p-toolbar>
+  <div class="p-toolbar-group-start text-layout "><b>Tabla SORT PrimeNG</b></div>
 
   <div class="p-toolbar-group-end">
     <button pButton pRipple type="button" label="Por nombre" icon="pi pi-sort"
@@ -43,12 +79,12 @@
 
 <div class="p-grid">
   <div class="p-col mt-3">
-    <p-table [value]="heroes | ordenar: ordenarPor">
+    <p-table [value]="heroes">
       <ng-template pTemplate="header">
         <tr>
-          <th>Nombre</th>
-          <th>Vuela</th>
-          <th>Color</th>
+          <th pSortableColumn="nombre">Nombre <p-sortIcon field="nombre"></p-sortIcon></th>
+          <th pSortableColumn="vuela">Vuela <p-sortIcon field="vuela"></p-sortIcon></th>
+          <th pSortableColumn="color">Color <p-sortIcon field="color"></p-sortIcon></th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-heroe>

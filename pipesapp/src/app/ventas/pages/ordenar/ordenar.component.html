@@ -45,7 +45,7 @@
 
 <div class="p-grid">
   <div class="p-col mt-3">
-    <p-table [value]="heroes" [tableStyle]="{'min-width': '50rem'}">
+    <p-table [value]="heroes | ordenar" [tableStyle]="{'min-width': '50rem'}">
       <ng-template pTemplate="header">
         <tr>
           <th>Nombre</th>

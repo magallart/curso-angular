@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { resolve } from 'dns';
 import { PrimeNGConfig } from 'primeng/api';
 import { interval } from 'rxjs';
 

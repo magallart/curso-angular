@@ -18,6 +18,24 @@
       <button pButton pRipple type="button" label="Borrar cliente" icon="pi pi-check"
         class="p-button-outlined p-button-help" (click)="borrarCliente()"></button>
     </p-fieldset>
+  </div>
+</div>
 
+<div class="grid">
+  <div class="col-6">
+    <p-fieldset legend="Slice Pipe" [toggleable]="true">
+      <p><b>Original</b></p>
+      <pre>{{clientes}}</pre>
+      <!-- <span *ngFor="let cliente of clientes">{{cliente}}</span> -->
+      <p><b>slice:0:2</b> </p>
+      <pre>{{clientes | slice:0:2}}</pre>
+      <p><b>slice:1:2</b> </p>
+      <pre>{{clientes | slice:1:2}}</pre>
+    </p-fieldset>
+  </div>
+  <div class="col-6">
+    <p-fieldset legend="XXX" [toggleable]="true">
+
+    </p-fieldset>
   </div>
 </div>

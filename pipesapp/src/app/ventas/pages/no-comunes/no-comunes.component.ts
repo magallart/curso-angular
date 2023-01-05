@@ -53,4 +53,11 @@ export class NoComunesComponent implements OnInit {
     edad: 37,
     direccion: 'Valencia, España',
   };
+
+  //JSON pipe
+  heroes = [
+    { nombre: 'Superman', vuelva: true },
+    { nombre: 'Robin', vuelva: false },
+    { nombre: 'Aquaman', vuelva: false },
+  ];
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Hero } from '../../interfaces/hero.interface';
 import { HeroesService } from '../../services/heroes.service';
@@ -9,10 +9,8 @@ import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
   templateUrl: './search-page.component.html',
   styles: [],
 })
-export class SearchPageComponent implements OnInit {
+export class SearchPageComponent {
   constructor(private heroesService: HeroesService) {}
-
-  ngOnInit(): void {}
 
   public searchInput = new FormControl('');
   public heroes: Hero[] = [];

@@ -166,6 +166,15 @@
       "alter_ego": "Norrin Radd",
       "first_appearance": "The Fantastic Four #48",
       "characters": "Norrin Radd"
+    },
+    {
+      "id": "v8CPAYB",
+      "superhero": "Nethuns",
+      "publisher": "Marvel Comics",
+      "alter_ego": "Trallag",
+      "first_appearance": "Comic JavaScript 2020 #3",
+      "characters": "Nethuns",
+      "alt_img": "https://cdn0.unprofesor.com/es/posts/1/3/2/poseidon_caracteristicas_principales_3231_600.jpg"
     }
   ]
 }

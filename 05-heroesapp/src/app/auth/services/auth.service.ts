@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
-export class ServiceNameService {
+export class AuthService {
   private baseUrl = environment.baseUrl;
   private user?: User;
 

@@ -23,7 +23,12 @@ export class AuthService {
       tap((user) => {
         this.user = user;
       }),
-      tap((user) => localStorage.setItem('token', user.id.toString()))
+      tap((user) => localStorage.setItem('token', 'A1842fFhS20aploiFw'))
     );
+  }
+
+  logout(): void {
+    this.user = undefined;
+    localStorage.clear();
   }
 }

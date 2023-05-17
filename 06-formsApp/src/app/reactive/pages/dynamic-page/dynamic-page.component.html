@@ -20,10 +20,10 @@
     <div class="col-sm-9">
 
       <div class="input-group">
-        <input class="form-control" placeholder="Agregar favorito">
+        <input class="form-control" placeholder="Agregar favorito" [formControl]="newFavorite">
 
 
-        <button class="btn btn-outline-primary" type="button">
+        <button class="btn btn-outline-primary" type="button" (click)="onAddToFavorites()">
           Agregar favorito
         </button>
       </div>

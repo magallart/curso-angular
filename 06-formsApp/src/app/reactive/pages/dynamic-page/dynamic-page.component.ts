@@ -77,6 +77,7 @@ export class DynamicPageComponent {
       return;
     }
     console.log(this.myForm.value);
+    (this.myForm.controls['favoriteGames'] as FormArray) = this.fb.array([]  );
     this.myForm.reset();
   }
 }

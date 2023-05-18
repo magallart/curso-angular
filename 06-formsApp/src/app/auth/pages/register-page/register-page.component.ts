@@ -1,15 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   templateUrl: './register-page.component.html',
-  styles: [
-  ]
+  styles: [],
 })
-export class RegisterPageComponent implements OnInit {
+export class RegisterPageComponent {
+  public myForm: FormGroup = this.fb.group({
+    name: ['', [Validators.required], []],
+    email: ['', [Validators.required], []],
+    username: ['', [Validators.required], []],
+    password: ['', [Validators.required, Validators.minLength(6)], []],
+    password2: ['', [Validators.required], []],
+  });
 
-  constructor() { }
+  constructor(private fb: FormBuilder) {}
 
-  ngOnInit(): void {
+  isValidField(field: string): boolean | null {
+    return (
+      this.myForm.controls[field].errors && this.myForm.controls[field].touched
+    );
   }
 
+  onSubmit() {
+    this.myForm.markAllAsTouched();
+  }
 }

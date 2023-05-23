@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-selector-page',
   templateUrl: './selector-page.component.html',
-  styles: [
-  ]
+  styles: [],
 })
-export class SelectorPageComponent implements OnInit {
+export class SelectorPageComponent {
+  public myForm: FormGroup = this.fb.group({
+    region: ['', Validators.required],
+    country: ['', Validators.required],
+    borders: ['', Validators.required],
+  });
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  constructor(private fb: FormBuilder) {}
 }

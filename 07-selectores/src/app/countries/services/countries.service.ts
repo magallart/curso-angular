@@ -5,7 +5,7 @@ import {
   Region,
   SmallCountry,
 } from '../interfaces/country.interfaces';
-import { Observable, of } from 'rxjs';
+import { Observable, combineLatest, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -55,5 +55,18 @@ export class CountriesService {
         borders: country.borders ?? [],
       }))
     );
+  }
+
+  getCountryBordersByCodes(borders: string[]): Observable<SmallCountry[]> {
+    if (!borders || borders.length === 0) return of([]); // nos aseguramos de que haya al menos un border
+
+    const countriesRequest: Observable<SmallCountry>[] = []; // listado de Observables con los paises borders
+
+    borders.forEach((code) => {
+      const request = this.getCountryByAlphaCode(code);
+      countriesRequest.push(request);
+    });
+
+    return combineLatest(countriesRequest);
   }
 }

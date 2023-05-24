@@ -11,7 +11,7 @@ import { filter, switchMap, tap } from 'rxjs/operators';
 })
 export class SelectorPageComponent implements OnInit {
   public countriesByRegion: SmallCountry[] = [];
-  public borders: string[] = [];
+  public borders: SmallCountry[] = [];
 
   public myForm: FormGroup = this.fb.group({
     region: ['', Validators.required],
@@ -56,12 +56,15 @@ export class SelectorPageComponent implements OnInit {
         filter((value: string) => value.length > 0),
         switchMap((alphacode) =>
           this.countriesService.getCountryByAlphaCode(alphacode)
+        ),
+        switchMap((country) =>
+          this.countriesService.getCountryBordersByCodes(country.borders)
         )
       )
-      .subscribe((country) => {
+      .subscribe((countries) => {
         // this.countriesByRegion = countries;
         // console.log({ borders: country.borders });
-        this.borders = country.borders;
+        this.borders = countries;
       });
   }
 }

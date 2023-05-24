@@ -6,7 +6,14 @@ export enum Region {
   Oceania = 'Oceania',
 }
 
+export interface SmallCountry {
+  // interfaz que se usará para hacer la petición http
+  name: string;
+  cca3: string;
+  borders: string[];
+}
 export interface Country {
+  // contiene demasiada información
   name: Name;
   cca3: string;
   status: Status;

@@ -6,6 +6,7 @@ import {
   Component,
   DoCheck,
   OnChanges,
+  OnDestroy,
   OnInit,
   SimpleChanges,
 } from '@angular/core';
@@ -23,9 +24,12 @@ export class ProductComponent
     AfterContentInit,
     AfterContentChecked,
     AfterViewInit,
-    AfterViewChecked
+    AfterViewChecked,
+    OnDestroy
 {
   public isProducVisible: boolean = false;
+  public currentPrice: number = 10;
+
   constructor() {
     console.log('Constructor');
   }
@@ -36,21 +40,28 @@ export class ProductComponent
   ngOnChanges(changes: SimpleChanges): void {
     console.log({ changes });
 
-    console.log('ngOnChanges');
+    console.log('PRODUCT: ngOnChanges');
   }
   ngDoCheck(): void {
-    console.log('ngDoCheck');
+    console.log('PRODUCT: ngDoCheck');
   }
   ngAfterContentInit(): void {
-    console.log('ngAfterContentInit');
+    console.log('PRODUCT: ngAfterContentInit');
   }
   ngAfterContentChecked(): void {
-    console.log('ngAfterContentChecked');
+    console.log('PRODUCT: ngAfterContentChecked');
   }
   ngAfterViewInit(): void {
-    console.log('ngAfterViewInit');
+    console.log('PRODUCT: ngAfterViewInit');
   }
   ngAfterViewChecked(): void {
-    console.log('ngAfterViewChecked');
+    console.log('PRODUCT: ngAfterViewChecked');
+  }
+  ngOnDestroy(): void {
+    console.log('PRODUCT: ngOnDestroy');
+  }
+
+  increasePrice() {
+    this.currentPrice++;
   }
 }
